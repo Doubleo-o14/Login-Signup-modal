@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import './App.css';
+import React, { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import "./App.css";
 
 library.add(fab);
 // import { useHistory } from 'react-router-dom';
@@ -43,9 +43,9 @@ function AuthContainer() {
   // };
 
   useEffect(() => {
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
+    const signUpButton = document.getElementById("signUp");
+    const signInButton = document.getElementById("signIn");
+    const container = document.getElementById("container");
 
     const handleSignUpClick = () => {
       container.classList.add("right-panel-active");
@@ -56,13 +56,13 @@ function AuthContainer() {
     };
 
     if (signUpButton && signInButton && container) {
-      signUpButton.addEventListener('click', handleSignUpClick);
-      signInButton.addEventListener('click', handleSignInClick);
+      signUpButton.addEventListener("click", handleSignUpClick);
+      signInButton.addEventListener("click", handleSignInClick);
 
       // Cleanup the event listeners when the component unmounts
       return () => {
-        signUpButton.removeEventListener('click', handleSignUpClick);
-        signInButton.removeEventListener('click', handleSignInClick);
+        signUpButton.removeEventListener("click", handleSignUpClick);
+        signInButton.removeEventListener("click", handleSignInClick);
       };
     }
   }, []); // Empty dependency array ensures that this effect runs once after initial render
@@ -70,22 +70,30 @@ function AuthContainer() {
   return (
     <>
       <div>
-        <div class="background-img">
-          
-        </div>
+        <div class="background-img"></div>
 
         <div class="container" id="container">
           <div class="form-container sign-up-container">
             <form action="#">
               <h1>Create Account</h1>
               <div class="social-container">
-                <a href="\" target='_blank' class="social google"><FontAwesomeIcon icon="fa-brands fa-google" style={{color: "#828282",}} /></a>
-                <a href="\" target='_blank' class="social spotify"><FontAwesomeIcon icon="fa-brands fa-spotify" style={{color: "#828282",}} /></a>
+                <a href="\" target="_blank" class="social google">
+                  <FontAwesomeIcon
+                    icon="fa-brands fa-google"
+                    style={{ color: "#828282" }}
+                  />
+                </a>
+                <a href="\" target="_blank" class="social spotify">
+                  <FontAwesomeIcon
+                    icon="fa-brands fa-spotify"
+                    style={{ color: "#828282" }}
+                  />
+                </a>
               </div>
               <span>or use your email for registration</span>
-              <input type="text" placeholder="Name" required/>
-              <input type="email" placeholder="Email" required/>
-              <input type="password" placeholder="Password" required/>
+              <input type="text" placeholder="Name" required />
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
               <button class="sign">Sign Up</button>
             </form>
           </div>
@@ -93,13 +101,25 @@ function AuthContainer() {
             <form action="#">
               <h1>Sign in</h1>
               <div class="social-container">
-                <a href="\" target='_blank' class="social google"><FontAwesomeIcon icon="fa-brands fa-google" style={{color: "#828282",}} /></a>
-                <a href="\" target='_blank' class="social spotify"><FontAwesomeIcon icon="fa-brands fa-spotify" style={{color: "#828282",}} /></a>
+                <a href="\" target="_blank" class="social google">
+                  <FontAwesomeIcon
+                    icon="fa-brands fa-google"
+                    style={{ color: "#828282" }}
+                  />
+                </a>
+                <a href="\" target="_blank" class="social spotify">
+                  <FontAwesomeIcon
+                    icon="fa-brands fa-spotify"
+                    style={{ color: "#828282" }}
+                  />
+                </a>
               </div>
               <span>or use your account</span>
-              <input type="email" placeholder="Email" required/>
-              <input type="password" placeholder="Password" required/>
-              <a href="\" target='_blank' >Forgot your password?</a>
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
+              <a href="\" target="_blank">
+                Forgot your password?
+              </a>
               <button class="sign">Sign In</button>
             </form>
           </div>
@@ -108,13 +128,21 @@ function AuthContainer() {
             <div class="overlay">
               <div class="overlay-panel overlay-left">
                 <h1>Welcome Back To Songkick!</h1>
-                <p>To keep connected with us please login with your personal info</p>
-                <button class="ghost" id="signIn">Sign In</button>
+                <p>
+                  To keep connected with us please login with your personal info
+                </p>
+                <button class="ghost" id="signIn">
+                  Sign In
+                </button>
               </div>
               <div class="overlay-panel overlay-right">
                 <h1>Hi from our team at Songkick!</h1>
-                <p>Enter your personal details and start journey with Songkick</p>
-                <button class="ghost" id="signUp">Sign Up</button>
+                <p>
+                  Enter your personal details and start journey with Songkick
+                </p>
+                <button class="ghost" id="signUp">
+                  Sign Up
+                </button>
               </div>
             </div>
           </div>
@@ -125,7 +153,6 @@ function AuthContainer() {
 }
 
 export default AuthContainer;
-
 
 // // App.js
 
